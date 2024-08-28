@@ -34,9 +34,9 @@ npm install @binance/connector
 ## RESTful APIs
 
 ```javascript
-const { Spot } = require('@binance/connector')
+const { Spot } = require('@binance/conector')
 
-const apiKey = ''
+conspst apiKey = ''
 const apiSecret = ''
 const client = new Spot(apiKey, apiSecret)
 
