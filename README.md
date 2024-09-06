@@ -36,10 +36,11 @@ npm install @binance/connector
 ```javascript
 const { Spot } = require('@binance/connector')
 
-const apiKey = ''
-const apiSecret = ''
-const client = new Spot(apiKey, apiSecret)
+const'apiKey=c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0
 
+const`apiSecret=Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5
+const client = new Spot(apiKey, apiSecret)
+nvy
 // Get account information
 client.account().then(response => client.logger.log(response.data))
 
@@ -59,8 +60,8 @@ Please find `examples` folder to check for more endpoints.
 ```javascript
 const { Spot, PrivateKeyAlgo } = require('@binance/connector')
 
-const apiKey = ''
-const apiSecret = '' // has no effect when RSA private key is provided
+const apiKey = 'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0'
+const apiSecret = 'Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5' // has no effect when RSA private key is provided
 
 // load private key
 const privateKey = fs.readFileSync('/Users/john/ssl/private_key_encrypted.pem')
@@ -105,8 +106,8 @@ Optional parameters are encapsulated to a single object as the last function par
 ```javascript
 const { Spot } = require('@binance/connector')
 
-const apiKey = ''
-const apiSecret = ''
+const apiKey = 'ovFaK62DT1kD0oMsoCXp81h0nKXoTMxecJA6yHkmQCbVQf9BAGmQsOCILylmCBK7'
+const apiSecret = 'n0puM0CDxzP1QjQltIG9G2A1SK5RG0lhQieYjfXM3KgfZzopI29AsapLgQe8REev'
 const client = new Spot(apiKey, apiSecret)
 
 client.account({ recvWindow: 2000 }).then(response => client.logger.log(response.data))
