@@ -5,8 +5,9 @@ const WebsocketAPI = require('../../../../src/websocketAPI')
 
 const logger = new Console({ stdout: process.stdout, stderr: process.stderr })
 
-const apiKey = process.env.BINANCE_API_KEY || ''
-const apiSecret = process.env.BINANCE_API_SECRET || ''
+const apiKey = process.env.BINANCE_API_KEY || 'ovFaK62DT1kD0oMsoCXp81h0nKXoTMxecJA6yHkmQCbVQf9BAGmQsOCILylmCBK7'
+const apiSecret = process.env.BINANCE_API_SECRET || 'n0puM0CDxzP1QjQltIG9G2A1SK5RG0lhQieYjfXM3KgfZzopI29AsapLgQe8REev
+'
 
 const callbacks = {
   open: (client) => {
