@@ -36,8 +36,8 @@ npm install @binance/connector
 ```javascript
 const { Spot } = require('@binance/connector')
 
-const apiKey = ''
-const apiSecret = ''
+const apiKey = 'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0'
+const apiSecret = 'Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5'
 const client = new Spot(apiKey, apiSecret)
 
 // Get account information
@@ -59,8 +59,8 @@ Please find `examples` folder to check for more endpoints.
 ```javascript
 const { Spot, PrivateKeyAlgo } = require('@binance/connector')
 
-const apiKey = ''
-const apiSecret = '' // has no effect when RSA private key is provided
+const apiKey = 'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0'
+const apiSecret = ' Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5 ' // has no effect when RSA private key is provided
 
 // load private key
 const privateKey = fs.readFileSync('/Users/john/ssl/private_key_encrypted.pem')
@@ -105,8 +105,8 @@ Optional parameters are encapsulated to a single object as the last function par
 ```javascript
 const { Spot } = require('@binance/connector')
 
-const apiKey = ''
-const apiSecret = ''
+const apiKey = 'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0'
+const apiSecret = 'Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5'
 const client = new Spot(apiKey, apiSecret)
 
 client.account({ recvWindow: 2000 }).then(response => client.logger.log(response.data))
@@ -120,24 +120,19 @@ It's easy to set timeout in milliseconds in request. If the request take longer 
 ```javascript
 const { Spot } = require('@binance/connector')
 
-const apiKey = ''
-const apiSecret = ''
+const apiKey = 'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0'
+const apiSecret = 'Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5'
 const client = new Spot(apiKey, apiSecret, { timeout: 1000 })
 
 client.account()
   .then(response => client.logger.log(response.data))
-  .catch(error => client.logger.error(error.message))
-```
-
-### Proxy
-
-The `axios` package is used as the http client in this library. A proxy settings is passed into `axios` directly, the details can be found at [here](https://github.com/axios/axios#request-config):
+  ios` package is used as the http client in this library. A proxy settings is passed into `axios` directly, the details can be found at [here](https://github.com/axios/axios#request-config):
 
 ```javascript
 const { Spot } = require('@binance/connector')
 
-const apiKey = ''
-const apiSecret = ''
+const apiKey = 'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0'
+const apiSecret = 'Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5'
 const client = new Spot(apiKey, apiSecret,
   {
     proxy: {
@@ -174,7 +169,7 @@ const client = new Spot(null, null,
 
 client.time()
   .then(response => client.logger.log(response.data))
-  .catch(error => client.logger.error(error))
+  
 
 ```
 [This comment](https://github.com/axios/axios/issues/925#issuecomment-359982190) provides more details.
@@ -211,37 +206,49 @@ client.exchangeInfo().then(response => client.logger.log(response.data))
 
 The default logger defined in the package is [Node.js Console class](https://nodejs.org/api/console.html). Its output is sent to `process.stdout` and `process.stderr`, same as the global console.
 
-### Error
-
-There are 2 types of error that may be returned from the API server and the user has to handle it properly:
-
-- `Client error`
-  - This is thrown when server returns `4XX`, it's an issue from client side.
-  - The following properties may be helpful to resolve the issue:
-    - Response header - Please refer to `Response Metadata` section for more details.
-    - HTTP status code
-    - Error code - Server's error code, e.g. `-1102`
-    - Error message - Server's error message, e.g. `Unknown order sent.`
-    - Request config - Configuration send to the server, which can include URL, request method and headers.
-
-  ```
-  // client initialization is skipped
-  client.exchangeInfo({ symbol: 'invalidSymbol' })
-    .then(response => client.logger.log(response.data))
-    .catch(err => {
-      client.logger.error(err.response.headers) // full response header
-      client.logger.error(err.response.status) // HTTP status code 400
-      client.logger.error(err.response.data) // includes both error code and message
-      client.logger.error(err.response.config) // includes request's config
-    })
-
-  ```
-
-- `Server error`
-  - This is thrown when server returns `5XX`, it's an issue from server side.
 
 
 ## Websocket
+
+"json.schemas": [
+    {
+        "fileMatch": [
+            "**/*.foo.json"
+        ],
+        "url": "./myschema.json"
+    }
+]
+
+
+
+"json.schemas": [
+    {
+        "fileMatch": [
+            "/.myconfig"
+        ],
+        "schema": {
+            "type": "object",
+            "properties": {
+                "name" : {
+                    "type": "string",
+                    "description": "The name of the entry"
+                }
+            }
+        }
+    }
+]
+
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/receipts/*.json",
+        "!/receipts/*.excluded.json"
+      ],
+      "url": "./receipts.schema.json"
+    }
+  ]
+
+
 
 ### Websocket Stream
 ```javascript
@@ -319,9 +326,20 @@ Note that when the connection is initialized, the console outputs a list of call
 ## Test
 
 ```bash
-npm install
+ {
+  "$schema": "https://json.schemastore.org/coffeelint",
+  "line_endings": "unix"
+}
+  npm install
 
-npm run test
+"json.schemas": [
+    {
+        "fileMatch": [
+            "/.babelrc"
+        ],
+        "url": "https://json.schemastore.org/babelrc"
+    }
+]
 
 ```
 
