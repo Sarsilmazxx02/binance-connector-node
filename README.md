@@ -210,6 +210,7 @@ The default logger defined in the package is [Node.js Console class](https://nod
 
 ## Websocket
 
+```
 "json.schemas": [
     {
         "fileMatch": [
@@ -248,8 +249,7 @@ The default logger defined in the package is [Node.js Console class](https://nod
     }
   ]
 
-
-
+ ```
 ### Websocket Stream
 ```javascript
 const { WebsocketStream } = require('@binance/connector')
